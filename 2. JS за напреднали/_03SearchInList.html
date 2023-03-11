@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+
+	<title>Search In List</title>
+</head>
+<body>
+	<ul id="items">
+		<li>Sofia</li>
+		
+		<li>Pleven</li>
+
+		<li>Varna</li>
+		
+		<li>Plovdiv</li>
+	</ul>
+
+	<input type="text" id="q">
+
+	<input type="button" value="Search" onclick="match()">
+
+	<div id="info"></div>
+
+	<script type="text/javascript">
+		const ul = document.querySelector("#items");
+		const q = document.querySelector("#q");
+		const info = document.querySelector("#info");
+
+		function match() {
+			loopUl();
+		}
+
+		q.addEventListener("keyup", function(evt) {
+			if(evt.code == "Enter") {
+				loopUl();
+			}
+		})
+
+		function loopUl() {
+			let counter = 0;
+			for (li of ul.children) {
+				if(li.innerText.toLowerCase().includes(q.value) && q.value !== "") {
+					li.innerHTML = '<b>' + li.innerText + '</b>';
+					counter++;
+				} else {
+					li.innerHTML = li.innerText;
+				}
+			}
+			info.innerHTML = `${counter} matches found.`;
+		}
+	</script>
+</body>
+</html>

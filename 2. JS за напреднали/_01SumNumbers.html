@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+
+	<title>Sum Number</title>
+</head>
+<body>
+	<input id="num1" type="text"> + <input id="num2" type="text"> = <input id="result" type="text">
+
+	<button id="sum">Sum It!</button>
+
+	<script type="text/javascript">
+		const btn = document.querySelector("#sum");
+
+		btn.addEventListener("click", () => {
+			const result = document.querySelector("#result");
+			const num1 = document.querySelector("#num1");
+			const num2 = document.querySelector("#num2");
+
+			result.value = Number(num1.value) + Number(num2.value);
+		})
+	</script>
+</body>
+</html>

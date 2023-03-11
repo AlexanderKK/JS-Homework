@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+
+	<title>List Articles</title>
+</head>
+<body>
+	<h1>List of Items</h1>
+	<ul id="items">
+		<li>First</li>
+		
+		<li>Second</li>
+	</ul>
+
+	<input type="text" id="newItemText">
+
+	<input type="button" value="Add" onclick="addItem()">
+
+	<script type="text/javascript">
+		function addItem() {
+			const newValue = document.querySelector("#newItemText").value;
+			const ul = document.querySelector("#items");
+			
+			const newLi = document.createElement('li');
+			newLi.innerText = newValue;
+			ul.appendChild(newLi);
+		}
+	</script>
+</body>
+</html>
